@@ -1,37 +1,14 @@
 import React from "react";
 import axios from "axios";
-import { useEffect } from "react";
+
 import { Nav, Body } from "./styles/Styles";
+import Bar from "./Components/Bar";
 
 function App() {
-  // useEffect(() => {
-  //   return () => {
-  //     axios.get("/api/postagens").then((resultado) => {
-  //       console.log(resultado);
-  //     });
-  //   };
-  // }, []);
-
   return (
     <>
       <Body color="#272844">
-        <Nav>
-          <div>
-            <img src="" alt="" />
-            <h1>Perpetro</h1>
-          </div>
-          <ul>
-            <li>
-              <a href="#">PESQUISA</a>
-            </li>
-            <li>
-              <a href="#">ENSINO E EXTENSÃO</a>
-            </li>
-            <li>
-              <a href="#">LABORATÓRIO</a>
-            </li>
-          </ul>
-        </Nav>
+        <Bar />
 
         <section>
           <div
@@ -39,7 +16,10 @@ function App() {
               width: "540px",
               height: "540px",
               backgroundColor: "#cfcfcf",
-              margin: "34px",
+              marginInline: "70px",
+              top: "0",
+              bottom: "0",
+              marginBlock: "auto",
             }} /* ISSO SERA UMA FOTO */
           ></div>
 

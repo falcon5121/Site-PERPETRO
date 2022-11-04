@@ -75,7 +75,7 @@ a:hover::after {
 export const Body = styled.div`
     width: 100%;
     height: 700px;
-    background-color: ${props => props.color };
+    background-color: ${ props => props.color };
 
     section { 
         display: flex;
@@ -88,7 +88,7 @@ export const Body = styled.div`
         font-family: 'Arial';
         width: 540px;
         height: 540px;
-        margin: 34px;
+        margin: 70px;
     }
 
     article > h1 {
