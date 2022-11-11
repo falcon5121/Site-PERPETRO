@@ -33,18 +33,18 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/pesquisa/projetos_individuais" element={<Pro_Ind />} />
       </Routes>
       <Routes>
-        <Route path="/ensino_e_pesquisa/cursos" element={<Cursos />} />
-        <Route path="/ensino_e_pesquisa/oficinas" element={<Oficinas />} />
-        <Route path="/ensino_e_pesquisa/probex" element={<Probex />} />
-        <Route path="/ensino_e_pesquisa/prolicen" element={<Prolicen />} />
+        <Route path="/ensino_e_extensao/cursos" element={<Cursos />} />
+        <Route path="/ensino_e_extensao/oficinas" element={<Oficinas />} />
+        <Route path="/ensino_e_extensao/probex" element={<Probex />} />
+        <Route path="/ensino_e_extensao/prolicen" element={<Prolicen />} />
       </Routes>
       <Routes>
         <Route path="/laboratorio/agenda" element={<Agenda />} />
         <Route path="/laboratorio/apresentacao" element={<Apresentação />} />
-        <Route path="/laboratorio/agenda" element={<Parcerias />} />
-        <Route path="/laboratorio/agenda" element={<Publicações />} />
-        <Route path="/laboratorio/agenda" element={<Quem_somos />} />
-        <Route path="/laboratorio/agenda" element={<Recursos_digitais />} />
+        <Route path="/laboratorio/parcerias" element={<Parcerias />} />
+        <Route path="/laboratorio/publicacoes" element={<Publicações />} />
+        <Route path="/laboratorio/quem_somos" element={<Quem_somos />} />
+        <Route path="/laboratorio/recursos_digitais" element={<Recursos_digitais />} />
       </Routes>
     </Router>
   </React.StrictMode>
