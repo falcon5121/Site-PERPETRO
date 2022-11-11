@@ -16,11 +16,12 @@ const Bar = () => {
     width: 100%;
     height: 2.5rem;
     background-color: #f1b133;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.9rem;
+    border-bottom-right-radius: 0.9rem;
     display: flex;
     justify-content: space-between;
     position: fixed;
+
   `;
 
   const NaviList = styled(Navi.List)`
@@ -35,11 +36,25 @@ const Bar = () => {
   const NaviItem = styled(Navi.Item)`
     width: 10rem;
     height: 2.5rem;
-    color: blue;
     top: 0%;
     bottom: 0;
     margin-block: 1rem;
     position: relative;
+
+    &:nth-child(1):hover~div{
+      opacity: 1;
+      left: 40px;
+      width: 80px;
+    }
+    &:nth-child(2):hover~div{
+      opacity: 1;
+      left: 160px;
+      width: 160px;
+    }
+    &:nth-child(3):hover~div{
+      opacity: 1;
+      left: 350px;
+    }
   `;
 
   const NaviCont = styled(Navi.Content)`
@@ -61,7 +76,6 @@ const Bar = () => {
     height: 2.5rem;
     background: none;
     border: none;
-    background-color: blue;
   `;
 
   const LogoNm = styled.h1`
@@ -91,6 +105,16 @@ const Bar = () => {
     color: #282626;
     text-decoration: none;
   `
+
+  const Ind = styled.div`
+    width: 100px;
+    height: 5px;
+    background: #272844;
+    position: absolute;
+    opacity: 0;
+    bottom: 3px;
+    transition: left 300ms ease-in-out;
+  `
   return (
     <NaviRoot>
       <NaviList style={{ justifyContent: "start", paddingLeft: "30%" }}>
@@ -101,7 +125,7 @@ const Bar = () => {
             backgroundColor: "grey",
           }}
         ></div>
-        <LogoNm style={{marginLeft:'10px'}}><NaviLink href='/'>PerPetro</NaviLink></LogoNm>
+        <LogoNm style={{marginLeft:'10px', }}><NaviLink href='/' style={{fontFamily: 'Comfortaa'}}>PerPetro</NaviLink></LogoNm>
       </NaviList>
 
       <NaviList>
@@ -136,6 +160,7 @@ const Bar = () => {
           </NaviCont>
           
         </NaviItem>
+        <Ind/>
       </NaviList>
     </NaviRoot>
   );
