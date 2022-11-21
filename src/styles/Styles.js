@@ -1,97 +1,47 @@
 import styled from "styled-components"
 
-export const Nav = styled.div`
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat:wght@100;300;400;600;700&display=swap');
 
+
+
+export const Body = styled.main`
     width: 100%;
-    height: 3rem;
-    background-color: #F1B133;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Montserrat';
-    font-size: 1rem;
-    font-weight: 100;
+    height: calc(${props => props.vezes} * 700px);
+    background-color: ${ props => props.color};
+    ${props => props.estilos};
+    
+    @media (max-width: 768px) {
+        padding-bottom: 1.6rem;
+        
+    }
+`
 
-& div {
-    height: 100%;
-    width: 15rem;
-    display: flex;
-}
-
-& div > h1 {
-    font-family: 'Comfortaa';
-    font-weight: 700;
-    text-align: end;
-    align-items: center;
-    margin-left: auto;
-    align-self: center;
-}
-
-
-& ul {
+export const Container = styled.section`
     display: flex;
     justify-content: space-around;
-    width: 35rem;
-}
-
-& li {
-    font-family: 'Montserrat';
-    list-style: none;
-    font-size: 1.1rem;
-    color: #282626;
-
-}
-
-/* & a:hover {
-    border-bottom: 4px solid;
-    border-color: #282626;
-} */
-
-& li > a {
-    color: #282626;
-    text-decoration: none;
-    font-weight: 600;
-    border-bottom: 0px solid;
-    transition: all 100ms ease-in-out;
-}
-
-a::after {
-    content: '';
-    border-bottom: 4px solid #282626;
-    position: relative;
-    width: 0;
-    display: block;
-    transition: all 300ms ease-in-out;
-}
-
-a:hover::after {
     width: 100%;
-}
+    height: 100%;
+
+    @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
 `
 
+export const CaixaTexto = styled.article`
+    font-family: 'Arial';
+    width: 33.75rem;
+    height: 33.75rem;
+    margin: 4.375rem;
 
-export const Body = styled.div`
-    width: 100%;
-    height: 700px;
-    background-color: ${ props => props.color };
-
-    section { 
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        height: 100%;
+    @media (max-width: 768px) {
+        margin-inline: 3.5rem;
+        width: 85%;
+        height: 40rem;
+        
     }
+`
 
-    article {
-        font-family: 'Arial';
-        width: 540px;
-        height: 540px;
-        margin: 70px;
-    }
-
-    article > h1 {
+export const Text = styled.h1`
         font-family: 'Comfortaa';
         font-weight: 700;
         font-size: 1.8rem;
@@ -99,21 +49,16 @@ export const Body = styled.div`
         letter-spacing: .3rem;
         width: 10rem;
         color: white;
+
+        padding-bottom: 0.75rem;
+        border-bottom: solid 3px #F1B133;
+
         
-    }
-
-    article > h1:after {
-        content: '';
-        display: block;
-        border-bottom: 2px #F1B133 solid;
-        padding: 5px;
-    }
-
-    p {
-        font-weight: 700;
-        color: white;
-        font-size: 1.15rem
-    }
-    
-
 `
+
+export const Content = styled.p`
+        color: white;
+        font-size: 1.15rem;
+        font-weight: 300;
+`
+

@@ -4,6 +4,8 @@ import App from "./App";
 import Global from "./Global/global.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Error from "./Error";
+
 import Pibic from "./Pages/Pesquisa/PIBIC";
 import Pro_Cole from "./Pages/Pesquisa/Projetos_Coletivos";
 import Pro_Ind from "./Pages/Pesquisa/Projetos_individuais";
@@ -26,25 +28,26 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-      </Routes>
-      <Routes>
+        <Route path="*" element={<Error />} />
+
         <Route path="/pesquisa/pibic" element={<Pibic />} />
         <Route path="/pesquisa/projetos_coletivos" element={<Pro_Cole />} />
         <Route path="/pesquisa/projetos_individuais" element={<Pro_Ind />} />
-      </Routes>
-      <Routes>
+
         <Route path="/ensino_e_extensao/cursos" element={<Cursos />} />
         <Route path="/ensino_e_extensao/oficinas" element={<Oficinas />} />
         <Route path="/ensino_e_extensao/probex" element={<Probex />} />
         <Route path="/ensino_e_extensao/prolicen" element={<Prolicen />} />
-      </Routes>
-      <Routes>
+
         <Route path="/laboratorio/agenda" element={<Agenda />} />
         <Route path="/laboratorio/apresentacao" element={<Apresentação />} />
         <Route path="/laboratorio/parcerias" element={<Parcerias />} />
         <Route path="/laboratorio/publicacoes" element={<Publicações />} />
         <Route path="/laboratorio/quem_somos" element={<Quem_somos />} />
-        <Route path="/laboratorio/recursos_digitais" element={<Recursos_digitais />} />
+        <Route
+          path="/laboratorio/recursos_digitais"
+          element={<Recursos_digitais />}
+        />
       </Routes>
     </Router>
   </React.StrictMode>

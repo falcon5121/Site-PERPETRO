@@ -1,16 +1,26 @@
 import React from "react";
-import {Body} from  '../../../styles/Styles'
+import { Cor, H1, P, Section } from "../../../styles/StylesPages";
+import { Body } from "../../../styles/Styles";
+import Footer from "../../../Components/Footer";
+import Center from "../../../Components/Center";
 import Bar from "../../../Components/Bar";
+import MobiNav from "../../../Components/MobiNav";
 
 export default function () {
   return (
-    <>
-    <Body color="#272844">
-      <Bar />
-      <h2>Testando se ainda Esta funcionando</h2>
-    </Body>
-    <Body color="#272844">
-    </Body>
-    </>
+    <Cor>
+      <Bar posi="false" />
+      <MobiNav />
+      <Body
+        color="#272844"
+        vezes="1"
+        estilos={"display: flex; justify-content: center"}
+      >
+        <Center>
+          <H1>Cursos</H1>
+        </Center>
+      </Body>
+      <Footer />
+    </Cor>
   );
 }
