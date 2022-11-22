@@ -9,6 +9,7 @@ import {
   faBook,
   faMusic,
   faRightToBracket,
+  faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,10 +18,12 @@ const NaviRoot = styled(Navi.Root)`
   height: 6rem;
   background-color: #f1b133;
   position: fixed;
-  bottom: 0;
+  bottom: ${(props) => props.animation}rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
   display: none;
+  border-top: solid 1px #272626;
+  transition: all 300ms;
 
   @media (max-width: 768px) {
     display: block;
@@ -39,11 +42,15 @@ const NaviList = styled(Navi.List)`
 const NaviItem = styled(Navi.Item)`
   width: 4rem;
   height: 4rem;
-
   border-radius: 10rem;
   display: block;
   border: none;
-  box-shadow: 0px 0px 16px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.2);
+  transition: 200ms all;
+
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 const NaviTrig = styled(Navi.Trigger)`
@@ -53,6 +60,18 @@ const NaviTrig = styled(Navi.Trigger)`
   width: 4rem;
   height: 4rem;
   border-radius: 10rem;
+`;
+
+const Home = styled(Link)`
+  color: #272626;
+  background-color: transparent;
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const NaviCont = styled(Navi.Content)`
@@ -78,7 +97,7 @@ const LinkItem = styled(Link)`
   font-weight: 600;
   font-size: 1rem;
   display: block;
-  padding: 0.3rem;
+  padding-block: 0.3rem;
   border-bottom: solid 1px #272626;
 `;
 
@@ -92,12 +111,11 @@ const Svg = styled.svg`
   margin: auto;
   bottom: -1.2rem;
   z-index: -1;
-  box-shadow: 0px 0px 16px 5px rgba(0, 0, 0, 0.1);
 `;
 
 const MobiNav = () => {
   return (
-    <NaviRoot>
+    <NaviRoot animation={0}>
       <NaviList>
         <NaviItem>
           <NaviTrig>
@@ -246,6 +264,7 @@ const MobiNav = () => {
             </ListItem>
           </NaviCont>
         </NaviItem>
+
         <NaviItem>
           <NaviTrig>
             <FontAwesomeIcon icon={faMusic} size={"2x"} />
@@ -327,9 +346,9 @@ const MobiNav = () => {
           </NaviCont>
         </NaviItem>
         <NaviItem>
-          <NaviTrig>
-            <FontAwesomeIcon icon={faRightToBracket} size={"2x"} />
-          </NaviTrig>
+          <Home to={"/"}>
+            <FontAwesomeIcon icon={faHouse} size={"2x"} />
+          </Home>
         </NaviItem>
       </NaviList>
     </NaviRoot>

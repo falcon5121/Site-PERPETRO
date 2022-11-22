@@ -8,6 +8,10 @@ const ContentList = styled.aside`
   justify-content: space-between;
   margin-right: 2rem;
   height: 11rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const FUl = styled.ul`
@@ -22,10 +26,6 @@ const Footer = styled.footer`
   justify-content: space-between;
   align-items: center;
   ${(props) => props.sty}
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const Flink = styled(Link)`
