@@ -20,7 +20,7 @@ const FUl = styled.ul`
 
 const Footer = styled.footer`
   width: 100%;
-  height: 200px;
+  height: 12.6rem;
   background-color: #f1b133;
   display: flex;
   justify-content: space-between;

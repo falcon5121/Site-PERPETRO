@@ -13,6 +13,7 @@ const NaviRoot = styled(Navi.Root)`
   display: flex;
   justify-content: space-between;
   position: ${(props) => props.posi};
+  z-index: 10;
   box-shadow: 0px 12px 34px 15px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 768px) {
@@ -140,6 +141,8 @@ const LoginBtn = styled(Login.Trigger)`
   border: none;
   font-weight: 600;
   font-size: 1rem;
+
+  cursor: pointer;
 `;
 
 const LoginO = styled(Login.Overlay)`

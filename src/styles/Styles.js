@@ -9,10 +9,10 @@ export const Body = styled.main`
     background-color: ${ props => props.color};
     ${props => props.estilos};
     
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
         padding-bottom: 1.6rem;
         
-    }
+    } */
 `
 
 export const Container = styled.section`

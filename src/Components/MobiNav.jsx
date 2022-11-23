@@ -12,18 +12,20 @@ import {
   faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRef } from "react";
 
 const NaviRoot = styled(Navi.Root)`
   width: 100%;
   height: 6rem;
   background-color: #f1b133;
   position: fixed;
-  bottom: ${(props) => props.animation}rem;
+  bottom: 0;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
   display: none;
   border-top: solid 1px #272626;
-  transition: all 300ms;
+  transition: all 100ms;
+  z-index: 10;
 
   @media (max-width: 768px) {
     display: block;
@@ -113,9 +115,21 @@ const Svg = styled.svg`
   z-index: -1;
 `;
 
-const MobiNav = () => {
+const MobiNav = (props) => {
+  const barra = useRef(null);
+
+  window.addEventListener("scroll", (e) => {
+    if (barra.current) {
+      if (e.path[1].scrollY >= props.amount) {
+        barra.current.style.bottom = "-6rem";
+      } else {
+        barra.current.style.bottom = "0";
+      }
+    }
+  });
+
   return (
-    <NaviRoot animation={0}>
+    <NaviRoot ref={barra}>
       <NaviList>
         <NaviItem>
           <NaviTrig>

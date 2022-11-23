@@ -100,7 +100,7 @@ function App() {
       >
         <Body color="#272844">
           <Bar pos={true} />
-          <MobiNav />
+          <MobiNav amount="800" />
 
           <Container>
             <Img style={{}} /* ISSO SERA UMA FOTO */></Img>
