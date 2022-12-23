@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import Posts from "./../Pages/Laboratório/Publicações/Posts";
 
 const H1 = styled.h1`
   font-size: 1.3rem;
@@ -39,6 +42,7 @@ const Edit = styled.a`
   display: ${(props) => props.admin};
   justify-content: space-around;
   align-items: center;
+  ${(props) => props.estilos}
 
   &:active {
     outline: 3px solid #886d21;
@@ -52,22 +56,34 @@ const Circle = styled.div`
   border-radius: 100%;
 `;
 
+import store from "../store";
+
+export const Dots = (props) => {
+  const logged = store.getState().loginAuth.value;
+
+  return (
+    <Edit
+      href="#"
+      admin={logged ? "flex" : "none"}
+      estilos={props.estilos}
+      onClick={props.function}
+    >
+      <Circle />
+      <Circle />
+      <Circle />
+    </Edit>
+  );
+};
+
 const Publi = (props) => {
   return (
     <>
-      <Ret>
-        <ALink href="#">
-          <H1>Evento de Trompete reune professores importantes do nordeste</H1>
-          <P>
-            Evento realizado pela ufpb acaba trazendo grandes quantidades de
-            alunos inscritos
-          </P>
+      <Ret onClick={() => Posts(props.postId)}>
+        <ALink href="http://localhost:5173/laboratorio/publicacoes/postagens/">
+          <H1>{props.title}</H1>
+          <P>{props.desc}</P>
         </ALink>
-        <Edit href="#" admin={props.admin ? "flex" : "none"}>
-          <Circle />
-          <Circle />
-          <Circle />
-        </Edit>
+        <Dots admin={props.admin} />
       </Ret>
     </>
   );

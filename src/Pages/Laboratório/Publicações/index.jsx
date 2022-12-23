@@ -14,6 +14,9 @@ import MobiNav from "../../../Components/MobiNav";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
+
+import { useEffect, useState } from "react";
 
 const Cor = styled.div`
   width: 100%;
@@ -54,13 +57,29 @@ const Btn = styled.a`
   transition: 200ms ease-in-out;
   font-size: 0.8rem;
   text-decoration: none;
+  display: ${(props) => props.visivel};
 
   &:active {
     transform: scale(0.99);
   }
 `;
 
+import store from "../../../store";
+
 export default function () {
+  const [dados, setDados] = useState([""]);
+
+  useEffect(() => {
+    if (!dados == [""]) {
+      axios
+        .get("http://localhost:3001/postagens")
+        .then((e) => setDados(e.data))
+        .catch((err) => console.log(err));
+    }
+  }, []);
+
+  const valor = store.getState().loginAuth.value;
+
   return (
     <Cor>
       <Bar posi="false" />
@@ -72,15 +91,26 @@ export default function () {
       >
         <Center>
           <TextP>Todas as Publicações</TextP>
-          <Btn href="#">
+          <Btn href="/editor" visivel={valor == true ? "inherit" : "none"}>
             Adicionar Nova Publicação &nbsp; <FontAwesomeIcon icon={faPlus} />
             &nbsp;
           </Btn>
           <ListPubli>
-            <Publi admin="flex" />
-            <Publi admin="flex" />
-            <Publi admin="flex" />
-            <Publi admin="flex" />
+            {!dados == [""] ? (
+              dados.map((index, indice) => {
+                return (
+                  <Publi
+                    key={indice}
+                    postId={indice}
+                    admin="flex"
+                    title={index.tittle}
+                    desc={index.subTittle}
+                  />
+                );
+              })
+            ) : (
+              <></>
+            )}
           </ListPubli>
         </Center>
       </Body>

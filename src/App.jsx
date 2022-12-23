@@ -6,6 +6,7 @@ import { Body, Container, CaixaTexto, Text, Content } from "./styles/Styles";
 import Bar from "./Components/Bar";
 import NewsComp from "./Components/NewsComp";
 import MobiNav from "./Components/MobiNav";
+import Loading from './Components/Loading'
 
 import Footer from "./Components/Footer";
 
@@ -93,6 +94,7 @@ const VP = styled.div`
 function App() {
   return (
     <>
+      <Loading/>
       <div
         style={{
           backgroundColor: "#272844",

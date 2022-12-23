@@ -10,7 +10,7 @@ export default function () {
   return (
     <Cor>
       <Bar posi="false" />
-      <MobiNav />
+      <MobiNav amount="10" />
       <Body
         color="#272844"
         vezes="1"

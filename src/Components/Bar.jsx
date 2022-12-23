@@ -3,6 +3,11 @@ import styled from "styled-components";
 import * as Navi from "@radix-ui/react-navigation-menu";
 import * as Login from "@radix-ui/react-dialog";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useRef } from "react";
+import { useState } from "react";
+import Logado from "./Logado";
+import { useEffect } from "react";
 
 const NaviRoot = styled(Navi.Root)`
   width: 100%;
@@ -33,10 +38,11 @@ const NaviList = styled(Navi.List)`
 const NaviItem = styled(Navi.Item)`
   width: 10rem;
   height: 2.5rem;
-  top: 0%;
+  top: 0;
   bottom: 0;
   margin-block: 1rem;
   position: relative;
+  ${(props) => props.more}
 
   &:nth-child(1):hover ~ div {
     transition: all 300ms;
@@ -60,8 +66,14 @@ const NaviItem = styled(Navi.Item)`
   &:nth-child(4):hover ~ div {
     transition: all 300ms;
     opacity: 1;
-    left: 30.875rem;
+    left: 30.4rem;
     width: 3.438rem;
+  }
+
+  &:nth-child(4) {
+    left: 0;
+    right: 0;
+    margin-right: 1rem;
   }
 `;
 
@@ -151,6 +163,18 @@ const LoginO = styled(Login.Overlay)`
   inset: 0;
 `;
 
+const Form = styled.form`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 20rem;
+  height: 23rem;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  padding-top: 3rem;
+  padding-inline: 2rem;
+`;
+
 const LoginC = styled(Login.Content)`
   position: fixed;
   top: 50%;
@@ -160,10 +184,9 @@ const LoginC = styled(Login.Content)`
   transform: translate(-50%, -50%);
   border-radius: 1rem;
   background-color: #f1b133;
-  padding-top: 3rem;
-  padding-inline: 2rem;
   box-shadow: 0px 0px 17px 19px rgba(0, 0, 0, 0.1);
   animation: show 100ms ease-in-out;
+  border: solid 1px #272626;
 
   @keyframes show {
     0% {
@@ -275,6 +298,10 @@ const Username = styled.input`
   &:first-of-type {
     margin-top: 1.5rem;
   }
+
+  &::placeholder {
+    color: ${(props) => props.color};
+  }
 `;
 
 const Button = styled.button`
@@ -309,6 +336,73 @@ const Separator = styled.div`
   bottom: 1rem;
   right: 2rem;
 `;
+
+import store from "../store";
+import { fetchLogin, login } from "../Redux/variavel";
+import { useDispatch, useSelector } from "react-redux";
+
+function ButtonSwitch() {
+  const user = useRef(null);
+  const pass = useRef(null);
+
+  const login = useSelector((store) => store);
+
+  const submit = async (e) => {
+    e.preventDefault();
+    const data = { username: user.current.value, password: pass.current.value };
+    try {
+      await axios
+        .post("http://localhost:3001/login", data, { withCredentials: true })
+        .then((e) => console.log(e))
+        .catch((er) => console.log(er));
+
+      window.location.reload(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  return store.getState().loginAuth.value == false ? (
+    <LoginR modal={false}>
+      <LoginBtn>Entrar</LoginBtn>
+      <Login.Portal>
+        <LoginO />
+        <LoginC>
+          <Form className="myForm">
+            {/*action="http://localhost:3001/login" method="post"*/}
+            <LoginT>Entrar</LoginT>
+            <LoginDesc>Acesso de administrador da pagina</LoginDesc>
+
+            <Username
+              placeholder={"Usuário"}
+              ref={user}
+              name="username"
+              id="username"
+            />
+
+            <Username
+              type={"password"}
+              placeholder={"Senha"}
+              ref={pass}
+              name="password"
+              id="password"
+            />
+            <LoginClose>X</LoginClose>
+            <Separator>
+              <LoginCancel>Cancelar</LoginCancel>
+              <Button type="submit" onClick={(e) => submit(e)}>
+                {/*  */}
+                Entrar
+              </Button>
+            </Separator>
+          </Form>
+        </LoginC>
+      </Login.Portal>
+    </LoginR>
+  ) : (
+    <Logado />
+  );
+}
 
 const Bar = (props) => {
   return (
@@ -397,26 +491,7 @@ const Bar = (props) => {
           </NaviCont>
         </NaviItem>
         <NaviItem>
-          <LoginR>
-            <LoginBtn>Entrar</LoginBtn>
-            <Login.Portal>
-              <LoginO />
-              <LoginC>
-                <LoginT>Entrar</LoginT>
-                <LoginDesc>Acesso de administrador da pagina</LoginDesc>
-                {/* <Label ref={ref}>Username</Label> */}
-                <Username placeholder={"Usuário"} />
-
-                {/* <Label ref={label}>Password</Label> */}
-                <Username type={"password"} placeholder={"Senha"} />
-                <LoginClose>X</LoginClose>
-                <Separator>
-                  <LoginCancel>Cancelar</LoginCancel>
-                  <Button type="submit">Entrar</Button>
-                </Separator>
-              </LoginC>
-            </Login.Portal>
-          </LoginR>
+          <ButtonSwitch />
         </NaviItem>
         <Ind />
       </NaviList>

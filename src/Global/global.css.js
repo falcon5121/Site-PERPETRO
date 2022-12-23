@@ -29,10 +29,10 @@ export default createGlobalStyle`
         font-size: 14px;
         }
 
-        
 
     }
 
+    
     
 
 &::-webkit-scrollbar{

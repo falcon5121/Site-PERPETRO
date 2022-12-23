@@ -1,0 +1,96 @@
+.ql-container {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  height: 100%;
+  margin: 0px;
+  position: relative;
+  background: #282626;
+  color: #f1b133;
+}
+
+.ql-toolbar.ql-snow {
+  background-color: #f1b133;
+}
+
+button > svg {
+  filter: invert(2000%) sepia(200%) saturate(2000%) hue-rotate(3deg)
+    brightness(30%) contrast(100%);
+}
+
+.ql-snow.ql-toolbar button,
+.ql-snow .ql-toolbar button {
+  width: 2rem !important;
+  height: 1.5rem !important;
+}
+.ql-snow.ql-toolbar button:hover > svg,
+.ql-snow .ql-toolbar button:hover > svg,
+.ql-snow.ql-toolbar button:focus > svg,
+.ql-snow .ql-toolbar button:focus > svg,
+.ql-snow.ql-toolbar button.ql-active > svg,
+.ql-snow .ql-toolbar button.ql-active > svg,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active > svg,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active > svg,
+.ql-snow.ql-toolbar .ql-picker-item:hover > svg,
+.ql-snow .ql-toolbar .ql-picker-item:hover > svg,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected > svg,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected > svg {
+  outline-offset: 0.2rem !important;
+  border-radius: 0.1rem;
+
+  outline: solid 2px #282626;
+}
+
+.ql-header.ql-picker:hover,
+.ql-header.ql-picker:active {
+  outline: solid 2px #282626;
+  border-radius: 0.1rem;
+}
+.ql-header.ql-picker.ql-expanded {
+  outline: solid 2px #282626;
+  border-radius: 0.1rem;
+}
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+  border-color: transparent !important;
+}
+
+.ql-stroke {
+  stroke: #282626 !important;
+}
+
+.ql-picker-options {
+  background: #f1b133 !important;
+  border: solid 1px #282626 !important;
+  border-radius: 1rem;
+  color: #282626 !important;
+}
+
+/* .ql-header.ql-picker {
+  border: solid 1px #282626;
+} */
+
+.ql-picker-label::before {
+  color: #282626 !important;
+}
+
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow .ql-toolbar .ql-picker-label:hover {
+  color: #282626;
+}
+
+.ql-toolbar.ql-snow {
+  border: 2px solid #615a5a !important;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  padding: 8px;
+}
+
+.ql-container.ql-snow {
+  border-left: 2px solid #615a5a !important;
+  border-right: 2px solid #615a5a !important;
+  border-bottom: 2px solid #615a5a !important;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
