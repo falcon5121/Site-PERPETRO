@@ -32,8 +32,13 @@ const loginSlice = createSlice({
       })
       .addCase(fetchLogin.fulfilled, (state, action) => {
         state.load = "complete";
-        state.value = action.payload;
-        console.table(state.load, state.value);
+        console.log(state.load)
+        if(!action.payload.isAuth) {
+          state.value = false
+        } else {
+          state.value = action.payload
+        }
+        // console.table(state.load, state.value);
       })
       .addCase(fetchLogin.rejected, (state, action) => {
         state.value = action.payload;

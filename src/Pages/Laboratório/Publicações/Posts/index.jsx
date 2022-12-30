@@ -8,19 +8,20 @@ import axios from "axios";
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useRef } from "react";
-
-// import { ListPubli } from "..";
+import { useParams } from "react-router-dom";
 
 const TextP = styled.h1`
   font-size: 2rem;
   color: #f1b133;
-  font-weight: 600;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
 `;
 
 const Sub = styled.h4`
   color: #f1b133;
-  font-weight: 400;
+  font-weight: 500;
   font-style: italic;
+  font-size: 1.2rem;
 `;
 const Date = styled.h5`
   color: #f1b133;
@@ -29,73 +30,50 @@ const Date = styled.h5`
   float: right;
 `;
 
-const Content = styled.p`
-  font-size: 5rem;
-  color: #f1b133;
-`;
+const Box = styled.main `
 
-const ListPubli = styled.section`
-  width: 36rem;
-  margin-top: 2rem;
-  padding-right: 6rem;
-  padding-top: 4rem;
-  height: 95%;
-  white-space: nowrap;
-  overflow: hidden;
+  width: 100%;
+  height: 90%;
+  
   color: #f1b133;
+  margin-top: 4rem;
 
   p {
     font-size: 1rem;
   }
 
-  @media (max-width: 768px) {
-    width: 100%;
+  .ql-font-serif {
+    font-family: serif !important;
+    font-size: 1.1rem !important;
   }
-`;
 
-// const Conteudo = async () => {
-//   const [data, setData] = useState([""]);
-
-//   var parser = new DOMParser();
-//   var doc = parser.parseFromString(data.content, "text/html");
-
-//   await axios
-//     .get("http://localhost:3001/postagens/publis/5")
-//     .then((e) => console.log(e))
-//     .catch((err) => console.log(err));
-
-//   return <>{doc}</>;
-// };
-
-const Ex = styled.div``;
+  .ql-font-monospace {
+    font-family: monospace !important;
+    font-size: 1.1rem !important;
+  }
+`
 
 const Posts = (props) => {
   const [dados, setDados] = useState([""]);
-  const [content, setContent] = useState("");
-  const [active, setActive] = useState(false);
-  const [numero, setNumero] = useState();
 
-  const [teste, setTest] = useState();
+  const { handle } = useParams()
 
   const id = useRef(null);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/postagens/publis/19`)
+      .get(`http://localhost:3001/postagens/publis/${handle}`)
       .then((e) => setDados(e.data));
   }, []);
 
+  const text = dados.content
+  const doc = new DOMParser().parseFromString(text, "text/html")
+  console.log(doc.body)
+
   useEffect(() => {
-    if (dados.content != undefined) {
-      const replaced1 = dados.content.replace("<p>", "<Content>");
-      const replaced2 = replaced1.replace("</p>", "</Content>");
-
-      setContent(replaced2);
-
-      id.current.innerHTML = dados.content;
-      console.log(id);
-    }
-  }, [dados]);
+    console.log(id)
+    id.current.innerHTML = doc.body.innerHTML
+  }, [doc])
 
   return (
     <>
@@ -108,9 +86,11 @@ const Posts = (props) => {
               <TextP>{dados.tittle}</TextP>
               <Sub>{dados.subTittle}</Sub>
               <Date>{dados.date}</Date>
-              <ListPubli id="div">
+              {/* <ListPubli id="div">
                 <Ex ref={id} />
-              </ListPubli>
+              </ListPubli> */}
+              <Box ref={id}>
+              </Box>
             </>
           ) : (
             <></>

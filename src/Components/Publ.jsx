@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Posts from "./../Pages/Laboratório/Publicações/Posts";
+import Posts from "../Pages/Laboratório/Publicações/Posts";
 
 const H1 = styled.h1`
   font-size: 1.3rem;
@@ -76,10 +76,12 @@ export const Dots = (props) => {
 };
 
 const Publi = (props) => {
+
+  
   return (
     <>
       <Ret onClick={() => Posts(props.postId)}>
-        <ALink href="http://localhost:5173/laboratorio/publicacoes/postagens/">
+        <ALink href={`http://localhost:5173/laboratorio/publicacoes/postagens/${props.postId}`}>
           <H1>{props.title}</H1>
           <P>{props.desc}</P>
         </ALink>

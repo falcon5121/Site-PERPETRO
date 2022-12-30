@@ -118,6 +118,7 @@ const ListItem = styled.li`
   &:last-child {
     border-bottom: none;
   }
+  
 `;
 
 const NaviLink = styled(Link)`
@@ -153,8 +154,6 @@ const LoginBtn = styled(Login.Trigger)`
   border: none;
   font-weight: 600;
   font-size: 1rem;
-
-  cursor: pointer;
 `;
 
 const LoginO = styled(Login.Overlay)`
@@ -338,14 +337,16 @@ const Separator = styled.div`
 `;
 
 import store from "../store";
-import { fetchLogin, login } from "../Redux/variavel";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function ButtonSwitch() {
   const user = useRef(null);
   const pass = useRef(null);
-
+  const [data, setData] = useState()
   const login = useSelector((store) => store);
+
+
+  
 
   const submit = async (e) => {
     e.preventDefault();

@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useRef } from "react";
 import styled from "styled-components";
+import Lottie from 'lottie-react'
+import trumpet from '../public/trumpet.json'
 
 
 const Back = styled.main`
@@ -58,6 +60,35 @@ const IconLoading = styled.div`
 
 `
 
+const AnimationTpt = styled(Lottie)`
+    
+    width: 20rem;
+    height: 20rem;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 22;
+    backdrop-filter: blur(10px);
+
+
+`
+const Shadow = styled.div `
+    opacity: 0.1;
+    
+    width: 10rem;
+    height: 10rem;
+    background-color: #262844;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 20;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+
+`
+
+
 
 const Loading = () => {
 
@@ -69,8 +100,10 @@ const Loading = () => {
     const demorar = () => {
         setTimeout(() => {
             container.current.style.opacity = '0'
-        }, 800)
-        
+        }, 500)
+        setTimeout(() => {
+            finalizar()
+        }, 700)
     }
 
     const finalizar = () => {
@@ -81,7 +114,10 @@ const Loading = () => {
     return(
         <>
             <Back ref={container}>
-                <IconLoading onAnimationStart={demorar}  onAnimationEnd={finalizar}/>
+                {/* <IconLoading onAnimationStart={demorar}  onAnimationEnd={finalizar}/> */}
+                {/* <img src={trumpet} /> */}
+                <AnimationTpt animationData={trumpet} loop={false} onComplete={demorar}/>
+                <Shadow/>
             </Back>
         
         </>

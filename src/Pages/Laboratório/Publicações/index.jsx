@@ -9,7 +9,7 @@ import { Body } from "../../../styles/Styles";
 
 import Footer from "../../../Components/Footer";
 
-import Publi from "../../../Components/Publi";
+import Publi from "../../../Components/Publ";
 import MobiNav from "../../../Components/MobiNav";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";

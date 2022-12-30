@@ -63,7 +63,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/Painel" element={<Painel />} />
           <Route path="/editor" element={<Editor />} />
           <Route
-            path="/laboratorio/publicacoes/postagens"
+            path="/laboratorio/publicacoes/postagens/:handle"
             element={<Postagens />}
           />
         </Routes>
