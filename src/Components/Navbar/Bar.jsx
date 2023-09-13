@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonSwitch from "./Modal/Modal.jsx";
-import pereptroLogo from "../../public/logo/logoPerpetro.png";
+import pereptroLogo from "/public/logo/logoPerpetro.png";
 import {
   Ind,
   List,

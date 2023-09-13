@@ -1,5 +1,5 @@
 import React from "react";
-import LogoPerpetro from "../../public/logo/logoPerpetro.png";
+import LogoPerpetro from "/public/logo/logoPerpetro.png";
 import {
   Align,
   ContentList,

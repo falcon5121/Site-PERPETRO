@@ -2,7 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import { AnimationTpt, Back, Shadow } from "./LoadingCss";
 
-import trumpet from "../../public/trumpet.json";
+import trumpet from "/public/trumpet.json";
 
 const Loading = () => {
   const container = useRef(null);

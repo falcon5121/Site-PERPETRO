@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import fotoPerpetro from "./public/Fotos/fotoPerpetro.jpeg";
+import fotoPerpetro from "/public/Fotos/fotoPerpetro.jpeg";
 
 import { useState } from "react";
 
