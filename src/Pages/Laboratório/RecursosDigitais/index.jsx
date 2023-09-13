@@ -1,5 +1,5 @@
 import React from "react";
-import { Cor, H1, P, Section } from "../../../styles/StylesPages";
+import { Cor, H1 } from "../../../styles/StylesPages";
 import { Body } from "../../../styles/Styles";
 import Footer from "../../../Components/Footer/Footer";
 import Center from "../../../Components/Center";
