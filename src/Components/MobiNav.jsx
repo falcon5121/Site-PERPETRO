@@ -118,15 +118,15 @@ const Svg = styled.svg`
 const MobiNav = (props) => {
   const barra = useRef(null);
 
-  window.addEventListener("scroll", (e) => {
-    if (barra.current) {
-      if (e.path[1].scrollY >= props.amount) {
-        barra.current.style.bottom = "-6rem";
-      } else {
-        barra.current.style.bottom = "0";
-      }
-    }
-  });
+  // window.addEventListener("scroll", (e) => {
+  //   if (barra.current) {
+  //     if (e.path[1].scrollY >= props.amount) {
+  //       barra.current.style.bottom = "-6rem";
+  //     } else {
+  //       barra.current.style.bottom = "0";
+  //     }
+  //   }
+  // });
 
   return (
     <NaviRoot ref={barra}>

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import styled from "styled-components";
 
@@ -42,19 +43,12 @@ const Desc = styled.h5`
   font-size: 0.8rem;
 `;
 
-const NewsComp = () => {
+const NewsComp = (props) => {
   return (
     <Item>
-      <Date>30/01/2022</Date>
-      <PTitle href="#">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-        pellentesque quam sed dolor tristique tincidunt.
-      </PTitle>
-      <Desc>
-        in tincidunt augue erat ut orci. Orci varius natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus. Praesent euismod sed
-        lorem eu efficitur
-      </Desc>
+      <Date>{props.date}</Date>
+      <PTitle href="#">{props.tittle}</PTitle>
+      <Desc>{props.desc}</Desc>
     </Item>
   );
 };

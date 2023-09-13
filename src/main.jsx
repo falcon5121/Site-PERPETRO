@@ -22,10 +22,9 @@ import Publicações from "./Pages/Laboratório/Publicações";
 import Quem_somos from "./Pages/Laboratório/Quem_somos";
 import Recursos_digitais from "./Pages/Laboratório/Recursos_digitais";
 import Painel from "./Pages/Painel de Controle";
-import Editor from "./Pages/Editor/index";
 import Postagens from "./Pages/Laboratório/Publicações/Posts";
 
-import { Provider, useDispatch, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import store from "./store";
 import { fetchLogin, login } from "./Redux/variavel";
 
@@ -34,7 +33,6 @@ store.dispatch(fetchLogin());
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      
       <Global />
       <Router>
         <Routes>
@@ -61,14 +59,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           />
 
           <Route path="/Painel" element={<Painel />} />
-          <Route path="/editor" element={<Editor />} />
+          {/* <Route path="/editor" element={<Editor />} /> */}
           <Route
             path="/laboratorio/publicacoes/postagens/:handle"
             element={<Postagens />}
           />
         </Routes>
       </Router>
-      
     </Provider>
   </React.StrictMode>
 );

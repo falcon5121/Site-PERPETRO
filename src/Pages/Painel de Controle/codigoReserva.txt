@@ -1,0 +1,68 @@
+// axios.put('http://localhost:3001/login/updateImg', data, {withCredentials: true})
+
+
+  {/*
+    const doc = img.current.files[0]
+
+    const getBase64 = (file) => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onload = () => {
+          setBase64(reader.result.toString().replace(/^data:(.*,)?/,''))
+          resolve(base64)
+          
+        }
+        reader.onerror = error => reject(error)
+      })
+    }
+
+    if(img.current.files.length >= 1) {
+       await getBase64(doc)
+      // console.log(img.current.files[0].type)
+
+    } */}
+    
+    // if(img.current.files.length < 1) {
+    //   console.log('length < 1')
+    // } else {
+    //   // axios.put('http://localhost:3001/login/updateImg',)
+    //   console.log('length > ou = 1')
+    // }
+
+
+
+
+/*
+  const formInside = newForm.current
+  
+  console.log(newForm)
+	console.log(formInside[0].files[0])
+
+
+  setPath(formInside[0].files[0])
+
+    const dados = {
+      username: formInside[1].value,
+      password: formInside[2].value,
+      img: {
+        data: newImg,
+        contentType: img.current.files[0]?.type
+      }
+	img: formInside[0].files
+    }
+    const confirmPass = formInside[3].value
+
+    if(dados.password != confirmPass) {
+      return;
+    }
+
+	if(dados.img == '') {
+		return	console.log('agora para aqui')
+	}
+
+  axios.put('http://localhost:3001/login/updateImg', dados, {withCredentials: true})
+    .then(e => console.log(e))
+    .catch(err => console.log(err))
+
+    console.log('alterações feitas') */

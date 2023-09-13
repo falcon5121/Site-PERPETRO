@@ -1,100 +1,45 @@
 import React from "react";
 import axios from "axios";
-import styled from "styled-components";
+import fotoPerpetro from "./public/Fotos/fotoPerpetro.jpeg";
+
+import { useState } from "react";
 
 import { Body, Container, CaixaTexto, Text, Content } from "./styles/Styles";
-import Bar from "./Components/Bar";
+import Bar from "./Components/Navbar/Bar";
 import NewsComp from "./Components/NewsComp";
 import MobiNav from "./Components/MobiNav";
-import Loading from './Components/Loading'
+import Loading from "./Components/Loading/Loading";
 
-import Footer from "./Components/Footer";
+import Footer from "./Components/Footer/Footer";
+import { useEffect } from "react";
 
-const News = styled.section`
-  width: 30rem;
-  height: 35rem;
-  background-color: #282626;
-  border-radius: 1rem;
+import {
+  Img,
+  LastNews,
+  News,
+  Pg2,
+  RodaPe,
+  VP,
+  Video,
+  VideoTxt,
+} from "./styleApp/styleApp";
 
-  @media (max-width: 420px) {
-    width: 25rem;
-  }
-`;
-
-const Pg2 = styled.main`
-  margin: auto;
-  width: 80rem;
-  height: 43.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-
-  @media (max-width: 1288px) {
-    width: 90%;
-  }
-`;
-
-const Video = styled.section`
-  width: 30rem;
-  height: 30rem;
-  background-color: #282626;
-  border-radius: 1rem;
-  padding-top: 2rem;
-  padding-inline: 1rem;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const VideoTxt = styled.p`
-  font-size: 1.2rem;
-  color: #f1b133;
-  margin-top: 2rem;
-  text-align: center;
-`;
-
-const LastNews = styled.h1`
-  color: #f1b133;
-  padding: 2em;
-  padding-bottom: 1.5em;
-  border-bottom: solid 1px #f2c46b;
-`;
-
-const RodaPe = styled.a`
-  font-size: 0.75rem;
-  color: #f1b133;
-  text-decoration: none;
-  padding-left: 1.25rem;
-  font-weight: 600;
-`;
-
-const Img = styled.div`
-  width: 33.75rem;
-  height: 33.75rem;
-  background-color: #cfcfcf;
-  margin-inline: 4.375rem;
-  top: 0;
-  bottom: 0;
-  margin-block: auto;
-
-  @media (max-width: 768px) {
-    width: 20rem;
-    height: 20rem;
-    margin-top: 2rem;
-  }
-`;
-
-const VP = styled.div`
-  width: 12.5rem;
-  height: 12.5rem;
-  background-color: #cfcfcf;
-  margin: auto;
-`;
 function App() {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    try {
+      axios
+        .get(`${serverIp}/postagens`, { withCredentials: true })
+        .then((e) => setData(e.data));
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
   return (
     <>
-      <Loading/>
+      <Loading />
       <div
         style={{
           backgroundColor: "#272844",
@@ -105,8 +50,20 @@ function App() {
           <MobiNav amount="800" />
 
           <Container>
-            <Img style={{}} /* ISSO SERA UMA FOTO */></Img>
-
+            {/* <Img style={{}} ISSO SERA UMA FOTO ></Img> */}
+            <img
+              src={fotoPerpetro}
+              style={{
+                aspectRatio: "auto",
+                objectFit: "cover",
+                maxWidth: "33.75rem",
+                height: "33.75rem",
+                marginInline: "4.375rem",
+                top: "0",
+                bottom: "0",
+                marginBlock: "auto",
+              }}
+            />
             <CaixaTexto>
               <Text>PerPetro</Text>
 
@@ -139,10 +96,44 @@ function App() {
               {/* Noticias */}
               <LastNews>Últimas Notícias</LastNews>
               <ul>
-                <NewsComp />
-                <NewsComp />
-                <NewsComp />
-                <NewsComp />
+                {data != undefined ? (
+                  <>
+                    <NewsComp
+                      date={data[data.length - 1].date}
+                      tittle={data[data.length - 1].tittle}
+                      desc={data[data.length - 1].content}
+                    />
+                    {/* {/* <NewsComp
+                      date={data[data.length - 2].date}
+                      tittle={data[data.length - 2].tittle}
+                      desc={data[data.length - 2].content}
+                    /> */}
+                    {/* <NewsComp
+                      date={data[data.length - 3].date}
+                      tittle={data[data.length - 3].tittle}
+                      desc={data[data.length - 3].content}
+                    />
+                    <NewsComp
+                      date={data[data.length - 4]}
+                      tittle={data[data.length - 4]}
+                      desc={data[data.length - 4].content}
+                    />{" "} */}
+                  </>
+                ) : (
+                  ""
+                )}
+
+                {/* {data != undefined
+                  ? data.map((e, index) => {
+                      return (
+                        <NewsComp
+                          date={e[data.length - index]?.date}
+                          tittle={e[data.length - index]?.tittle}
+                          desc={e[data.length - index]?.content}
+                        />
+                      );
+                    })
+                  : ""} */}
 
                 <RodaPe href="#">Ver Mais</RodaPe>
               </ul>
@@ -161,5 +152,7 @@ function App() {
     </>
   );
 }
+
+export const serverIp = import.meta.env.VITE_KEY;
 
 export default App;

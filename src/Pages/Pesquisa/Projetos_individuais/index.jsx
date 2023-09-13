@@ -1,9 +1,9 @@
 import React from "react";
 import { Cor, H1, P, Section } from "../../../styles/StylesPages";
 import { Body } from "../../../styles/Styles";
-import Footer from "../../../Components/Footer";
+import Footer from "../../../Components/Footer/Footer";
 import Center from "../../../Components/Center";
-import Bar from "../../../Components/Bar";
+import Bar from "../../../Components/Navbar/Bar";
 import MobiNav from "../../../Components/MobiNav";
 
 export default function () {
