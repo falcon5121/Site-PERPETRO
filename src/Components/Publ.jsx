@@ -57,6 +57,7 @@ const Circle = styled.div`
 `;
 
 import store from "../store";
+import { serverIp } from "../App";
 
 export const Dots = (props) => {
   const logged = store.getState().loginAuth.value;
@@ -76,12 +77,12 @@ export const Dots = (props) => {
 };
 
 const Publi = (props) => {
-
-  
   return (
     <>
       <Ret onClick={() => Posts(props.postId)}>
-        <ALink href={`http://localhost:5173/laboratorio/publicacoes/postagens/${props.postId}`}>
+        <ALink
+          href={`${serverIp}laboratorio/publicacoes/postagens/${props.postId}`}
+        >
           <H1>{props.title}</H1>
           <P>{props.desc}</P>
         </ALink>

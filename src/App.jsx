@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     try {
       axios
-        .get(`${serverIp}/postagens`, { withCredentials: true })
+        .get(`${serverIp}postagens`, { withCredentials: true })
         .then((e) => setData(e.data));
     } catch (err) {
       console.log(err);

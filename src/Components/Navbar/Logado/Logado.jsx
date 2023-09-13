@@ -13,6 +13,7 @@ import {
 } from "./LogadoStyle";
 
 import { useSelector } from "react-redux";
+import { serverIp } from "../../../App";
 
 const Logado = () => {
   const decodeJwt = (token) =>
@@ -28,7 +29,7 @@ const Logado = () => {
   }
 
   const Logout = (e) => {
-    axios.get("http://localhost:3001/login/deslogar", {
+    axios.get(`${serverIp}login/deslogar`, {
       withCredentials: true,
     });
     // localStorage.removeItem("user_credentials");
