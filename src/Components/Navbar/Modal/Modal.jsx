@@ -37,7 +37,7 @@ function ButtonSwitch() {
     const data = { user: user.current.value, pass: pass.current.value };
     try {
       await axios
-        .post(`${serverIp}login`, data, { withCredentials: true })
+        .post(`${serverIp}/login`, data, { withCredentials: true })
         .then((e) => {
           localStorage.setItem("user_credentials", e.data);
         });

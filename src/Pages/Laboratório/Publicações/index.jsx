@@ -34,6 +34,7 @@ export const ListPubli = styled.section`
 `;
 
 import { useSelector } from "react-redux";
+import { serverIp } from "../../../App";
 
 export default function () {
   const [dados, setDados] = useState([""]);
@@ -47,7 +48,7 @@ export default function () {
   useEffect(() => {
     if (!dados == [""]) {
       axios
-        .get("http://localhost:3001/postagens")
+        .get(`${serverIp}/postagens`)
         .then((e) => setDados(e.data))
         .catch((err) => console.log(err));
     }

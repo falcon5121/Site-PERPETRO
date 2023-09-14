@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { serverIp } from "../App";
 
 export const fetchLogin = createAsyncThunk("loginAuth/fetchLogin", async () => {
-  const res = await axios.get("http://localhost:3001/login", {
+  const res = await axios.get(`${serverIp}/login`, {
     withCredentials: true,
   });
   return res.data;
@@ -32,11 +33,11 @@ const loginSlice = createSlice({
       })
       .addCase(fetchLogin.fulfilled, (state, action) => {
         state.load = "complete";
-        console.log(state.load)
-        if(!action.payload.isAuth) {
-          state.value = false
+        console.log(state.load);
+        if (!action.payload.isAuth) {
+          state.value = false;
         } else {
-          state.value = action.payload
+          state.value = action.payload;
         }
         // console.table(state.load, state.value);
       })
