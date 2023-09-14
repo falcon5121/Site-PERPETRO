@@ -19,7 +19,7 @@ import Agenda from "./Pages/Laboratório/Agenda";
 import Apresentação from "./Pages/Laboratório/Apresentação";
 import Parcerias from "./Pages/Laboratório/Parcerias";
 import Publicações from "./Pages/Laboratório/Publicações";
-import Quem_somos from "./Pages/Laboratório/Quem_somos/index";
+import Quem_somos from "./Pages/Laboratório/QuemSomos/QuemSomos";
 import Digitais from "./Pages/Laboratório/Digitais/Digitais";
 import Painel from "./Pages/Painel de Controle";
 import Postagens from "./Pages/Laboratório/Publicações/Posts";
