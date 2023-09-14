@@ -20,7 +20,7 @@ import Apresentação from "./Pages/Laboratório/Apresentação";
 import Parcerias from "./Pages/Laboratório/Parcerias";
 import Publicações from "./Pages/Laboratório/Publicações";
 import Quem_somos from "./Pages/Laboratório/Quem_somos";
-import Recursosdigitais from "./Pages/Laboratório/Recursosdigitais/index";
+import Recursosdigitais from "./Pages/Laboratório/Digitais/index";
 import Painel from "./Pages/Painel de Controle";
 import Postagens from "./Pages/Laboratório/Publicações/Posts";
 
