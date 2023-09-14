@@ -19,13 +19,13 @@ import Agenda from "./Pages/Laboratório/Agenda";
 import Apresentação from "./Pages/Laboratório/Apresentação";
 import Parcerias from "./Pages/Laboratório/Parcerias";
 import Publicações from "./Pages/Laboratório/Publicações";
-import Quem_somos from "./Pages/Laboratório/Quem_somos";
-import Recursosdigitais from "./Pages/Laboratório/Digitais/index";
+import Quem_somos from "./Pages/Laboratório/Quem_somos/Quem_somos";
+import Digitais from "./Pages/Laboratório/Digitais/Digitais";
 import Painel from "./Pages/Painel de Controle";
 import Postagens from "./Pages/Laboratório/Publicações/Posts";
 
-import { Provider } from "react-redux";
-import store from "./store";
+// import { Provider } from "react-redux";
+// import store from "./store";
 // import { fetchLogin, login } from "./Redux/variavel";
 
 // store.dispatch(fetchLogin());
@@ -53,10 +53,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/laboratorio/parcerias" element={<Parcerias />} />
           <Route path="/laboratorio/publicacoes" element={<Publicações />} />
           <Route path="/laboratorio/quem_somos" element={<Quem_somos />} />
-          <Route
-            path="/laboratorio/recursos_digitais"
-            element={<Recursosdigitais />}
-          />
+          <Route path="/laboratorio/recursos_digitais" element={<Digitais />} />
 
           <Route path="/Painel" element={<Painel />} />
           {/* <Route path="/editor" element={<Editor />} /> */}
