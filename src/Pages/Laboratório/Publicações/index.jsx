@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Bar from "../../../Components/Navbar/Bar";
 
-import { Btn, Cor, TextP } from "./style/styleIndex.js";
+import { Btn, Cor, TextP } from "./style/styleIndex";
 
 import Center from "../../../Components/Center";
 
