@@ -16,7 +16,7 @@ import Probex from "./Pages/Ensino_e_Extensão/Probex";
 import Prolicen from "./Pages/Ensino_e_Extensão/Prolicen";
 
 import Agenda from "./Pages/Laboratorio/Agenda";
-import Apresentação from "./Pages/Laboratorio/Apresentação";
+import Apresentação from "./Pages/Laboratorio/Apresentacao/Apresentacao";
 import Parcerias from "./Pages/Laboratorio/Parcerias";
 import Publicações from "./Pages/Laboratorio/Publicações";
 import Quem_somos from "./Pages/Laboratorio/About/About.jsx";
