@@ -1,9 +1,9 @@
-import { Cor, H1 } from "../../../styles/StylesPages";
-import { Body } from "../../../styles/Styles";
-import Footer from "../../../Components/Footer/Footer";
-import Center from "../../../Components/Center";
-import Bar from "../../../Components/Navbar/Bar";
-import MobiNav from "../../../Components/MobiNav";
+// import { Cor, H1 } from "../../../styles/StylesPages";
+// import { Body } from "../../../styles/Styles";
+// import Footer from "../../../Components/Footer/Footer";
+// import Center from "../../../Components/Center";
+// import Bar from "../../../Components/Navbar/Bar";
+// import MobiNav from "../../../Components/MobiNav";
 
 export default function () {
   return (
