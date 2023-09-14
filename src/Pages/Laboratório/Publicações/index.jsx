@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Bar from "../../../Components/Navbar/Bar";
 
-// import { Btn, Cor, TextP } from "./styleIndex";
+import { Btn, Cor, TextP } from "./styleIndex.js";
 
 import Center from "../../../Components/Center";
 
@@ -33,15 +33,10 @@ export const ListPubli = styled.section`
   }
 `;
 
-import { useSelector } from "react-redux";
 import { serverIp } from "../../../App";
 
 export default function () {
   const [dados, setDados] = useState([""]);
-
-  // const login = useSelector((store) => store);
-
-  // const valor = login.loginAuth.value.isAuth;
 
   const valor = localStorage.key("user_credentials");
 
