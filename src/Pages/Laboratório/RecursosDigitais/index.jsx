@@ -8,7 +8,7 @@ import MobiNav from "../../../Components/MobiNav";
 export default function () {
   return (
     <Cor>
-      <Bar posi="false" />
+      {/* <Bar posi="false" />
       <MobiNav />
       <Body
         color="#272844"
@@ -19,7 +19,7 @@ export default function () {
           <H1>Recursos Digitais</H1>
         </Center>
       </Body>
-      <Footer />
+      <Footer /> */}
     </Cor>
   );
 }
