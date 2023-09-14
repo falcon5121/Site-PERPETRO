@@ -20,7 +20,7 @@ import Apresentação from "./Pages/Laboratório/Apresentação";
 import Parcerias from "./Pages/Laboratório/Parcerias";
 import Publicações from "./Pages/Laboratório/Publicações";
 import Quem_somos from "./Pages/Laboratório/Quem_somos";
-// import RecursosDigitais from "./Pages/Laboratório/RecursosDigitais/index";
+import RecursosDigitais from "./Pages/Laboratório/recursosdigitais/index";
 import Painel from "./Pages/Painel de Controle";
 import Postagens from "./Pages/Laboratório/Publicações/Posts";
 
@@ -53,10 +53,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/laboratorio/parcerias" element={<Parcerias />} />
           <Route path="/laboratorio/publicacoes" element={<Publicações />} />
           <Route path="/laboratorio/quem_somos" element={<Quem_somos />} />
-          {/* <Route
+          <Route
             path="/laboratorio/recursos_digitais"
             element={<RecursosDigitais />}
-          /> */}
+          />
 
           <Route path="/Painel" element={<Painel />} />
           {/* <Route path="/editor" element={<Editor />} /> */}
