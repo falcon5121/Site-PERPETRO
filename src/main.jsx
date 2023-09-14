@@ -20,15 +20,15 @@ import Apresentação from "./Pages/Laboratório/Apresentação";
 import Parcerias from "./Pages/Laboratório/Parcerias";
 import Publicações from "./Pages/Laboratório/Publicações";
 import Quem_somos from "./Pages/Laboratório/Quem_somos";
-import RecursosDigitais from "./Pages/Laboratório/recursosdigitais/index";
+import Recursosdigitais from "./Pages/Laboratório/Recursosdigitais/index";
 import Painel from "./Pages/Painel de Controle";
 import Postagens from "./Pages/Laboratório/Publicações/Posts";
 
 import { Provider } from "react-redux";
 import store from "./store";
-import { fetchLogin, login } from "./Redux/variavel";
+// import { fetchLogin, login } from "./Redux/variavel";
 
-store.dispatch(fetchLogin());
+// store.dispatch(fetchLogin());
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -55,7 +55,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/laboratorio/quem_somos" element={<Quem_somos />} />
           <Route
             path="/laboratorio/recursos_digitais"
-            element={<RecursosDigitais />}
+            element={<Recursosdigitais />}
           />
 
           <Route path="/Painel" element={<Painel />} />
