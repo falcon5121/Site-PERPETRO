@@ -18,7 +18,7 @@ import Prolicen from "./Pages/Ensino_e_Extensão/Prolicen";
 import Agenda from "./Pages/Laboratorio/Agenda";
 import Apresentação from "./Pages/Laboratorio/Apresentacao/Apresentacao";
 import Parcerias from "./Pages/Laboratorio/Parcerias";
-import Publicacoees from "./Pages/Laboratorio/Publicacoes";
+import Publicacoes from "./Pages/Laboratorio/Publicacoes";
 import Quem_somos from "./Pages/Laboratorio/About/About.jsx";
 import Digitais from "./Pages/Laboratorio/Digitais/Digitais";
 import Painel from "./Pages/Painel de Controle";
@@ -51,7 +51,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/laboratorio/agenda" element={<Agenda />} />
           <Route path="/laboratorio/apresentacao" element={<Apresentação />} />
           <Route path="/laboratorio/parcerias" element={<Parcerias />} />
-          <Route path="/laboratorio/publicacoes" element={<Publicações />} />
+          <Route path="/laboratorio/publicacoes" element={<Publicacoes />} />
           <Route path="/laboratorio/quem_somos" element={<Quem_somos />} />
           <Route path="/laboratorio/recursos_digitais" element={<Digitais />} />
 
