@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { useParams } from "react-router-dom";
+import { serverIp } from "../../../../App";
 
 const TextP = styled.h1`
   font-size: 2rem;
@@ -61,7 +62,7 @@ const Posts = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/postagens/publis/${handle}`)
+      .get(`${serverIp}/postagens/publis/${handle}`)
       .then((e) => setDados(e.data));
   }, []);
 

@@ -80,9 +80,7 @@ const Publi = (props) => {
   return (
     <>
       <Ret onClick={() => Posts(props.postId)}>
-        <ALink
-          href={`${serverIp}laboratorio/publicacoes/postagens/${props.postId}`}
-        >
+        <ALink href={`/laboratorio/publicacoes/postagens/${props.postId}`}>
           <H1>{props.title}</H1>
           <P>{props.desc}</P>
         </ALink>
