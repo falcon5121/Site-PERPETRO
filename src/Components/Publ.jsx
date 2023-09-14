@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Posts from "../Pages/Laboratório/Publicações/Posts";
+import Posts from "../Pages/Laboratorio/Publicações/Posts";
 
 const H1 = styled.h1`
   font-size: 1.3rem;

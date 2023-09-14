@@ -15,14 +15,14 @@ import Oficinas from "./Pages/Ensino_e_Extensão/Oficinas";
 import Probex from "./Pages/Ensino_e_Extensão/Probex";
 import Prolicen from "./Pages/Ensino_e_Extensão/Prolicen";
 
-import Agenda from "./Pages/Laboratório/Agenda";
-import Apresentação from "./Pages/Laboratório/Apresentação";
-import Parcerias from "./Pages/Laboratório/Parcerias";
-import Publicações from "./Pages/Laboratório/Publicações";
-import Quem_somos from "./Pages/Laboratório/About/About.jsx";
-import Digitais from "./Pages/Laboratório/Digitais/Digitais";
+import Agenda from "./Pages/Laboratorio/Agenda";
+import Apresentação from "./Pages/Laboratorio/Apresentação";
+import Parcerias from "./Pages/Laboratorio/Parcerias";
+import Publicações from "./Pages/Laboratorio/Publicações";
+import Quem_somos from "./Pages/Laboratorio/About/About.jsx";
+import Digitais from "./Pages/Laboratorio/Digitais/Digitais";
 import Painel from "./Pages/Painel de Controle";
-import Postagens from "./Pages/Laboratório/Publicações/Posts";
+import Postagens from "./Pages/Laboratorio/Publicações/Posts";
 
 // import { Provider } from "react-redux";
 // import store from "./store";
