@@ -18,11 +18,11 @@ import Prolicen from "./Pages/Ensino_e_Extensão/Prolicen";
 import Agenda from "./Pages/Laboratorio/Agenda";
 import Apresentação from "./Pages/Laboratorio/Apresentacao/Apresentacao";
 import Parcerias from "./Pages/Laboratorio/Parcerias";
-import Publicações from "./Pages/Laboratorio/Publicações";
+import Publicacoees from "./Pages/Laboratorio/Publicacoes";
 import Quem_somos from "./Pages/Laboratorio/About/About.jsx";
 import Digitais from "./Pages/Laboratorio/Digitais/Digitais";
 import Painel from "./Pages/Painel de Controle";
-import Postagens from "./Pages/Laboratorio/Publicações/Posts";
+import Postagens from "./Pages/Laboratorio/Publicacoes/Posts";
 
 // import { Provider } from "react-redux";
 // import store from "./store";
